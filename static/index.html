@@ -9,7 +9,7 @@
 <title>Wally</title>
 <link rel="manifest" href="/static/manifest.webmanifest">
 <link rel="icon" href="/static/icon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/static/style.css">
+<link rel="stylesheet" href="/static/style.css?v=mic-auto-1">
 </head>
 <body>
 <main id="escena">
@@ -22,15 +22,20 @@
   </svg>
   <button id="ajustes-btn" class="icono" aria-label="Abrir ajustes" aria-expanded="false">⚙</button>
   <p id="estado" role="status" aria-live="polite">Listo para conversar</p>
-  <div id="controles"><button id="hablar" disabled>Mantén para hablar</button><button id="reproducir" hidden>Escuchar respuesta</button></div>
+  <div id="controles"><button id="hablar" disabled aria-label="Activar micrófono" aria-pressed="false" title="Activar micrófono"></button><button id="reproducir" hidden>Escuchar respuesta</button></div>
   <p id="orientacion">Gira el celular para ver a Wally en horizontal</p>
   <section id="bienvenida" class="capa">
-    <div class="tarjeta"><span class="marca">WALLY</span><h1>Hola, estoy aquí.</h1><p>Mantén el botón para hablar.<br>Suéltalo y te responderé.</p><button id="iniciar">Comenzar</button><small>Usaremos tu micrófono. La cámara es opcional y se procesa en tu dispositivo.</small></div>
+    <div class="tarjeta"><span class="marca">WALLY</span><h1>Hola, estoy aquí.</h1><p>Activa el micrófono y habla.<br>Wally responderá cuando termines.</p><button id="iniciar">Comenzar</button><small>Usaremos tu micrófono. La cámara es opcional y se procesa en tu dispositivo.</small></div>
   </section>
   <section id="ajustes" class="capa" hidden>
     <div class="tarjeta ajustes"><div class="fila"><h2>Ajustes</h2><button id="cerrar-ajustes" class="secundario" aria-label="Cerrar ajustes">Cerrar</button></div>
       <button id="camara-btn" class="secundario">Activar seguimiento</button><p id="camara-estado">Cámara apagada</p>
       <label><input id="invertir" type="checkbox"> Invertir mirada horizontal</label>
+      <label for="pausa">Pausa antes de responder
+        <select id="pausa"><option value="1000">1 segundo</option><option value="1500" selected>1.5 segundos</option><option value="2200">2.2 segundos</option><option value="3000">3 segundos</option></select></label>
+      <label for="sensibilidad">Sensibilidad del micrófono
+        <select id="sensibilidad"><option value="0.010">Voz suave</option><option value="0.018" selected>Normal</option><option value="0.035">Ambiente ruidoso</option></select></label>
+      <p class="ayuda">Activa o silencia con el botón pequeño. Wally pausa la escucha mientras piensa y habla, y la retoma al terminar. El silencio se detecta por volumen, así que conviene evitar música y ruido cercano.</p>
       <label><input id="subtitulos" type="checkbox"> Mostrar respuesta en pantalla</label>
       <button id="pantalla" class="secundario">Ampliar pantalla</button>
       <p class="ayuda">En iPhone puedes usar Compartir → Agregar a inicio y abrir Wally desde su icono para aprovechar la pantalla.</p>
@@ -42,6 +47,6 @@
   <p id="respuesta" hidden></p>
   <video id="video" autoplay muted playsinline aria-hidden="true"></video>
 </main>
-<script type="module" src="/static/app.js"></script>
+<script type="module" src="/static/app.js?v=mic-auto-1"></script>
 </body>
 </html>
