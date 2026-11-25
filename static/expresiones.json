@@ -1,0 +1,67 @@
+{
+  "EMOCIONES": {
+    "alegria": {
+      "placer": 0.8,
+      "activacion": 0.5,
+      "dominancia": 0.4,
+      "sonrisa": 0.85,
+      "ojos": 0.7,
+      "apertura_boca": 0,
+      "boca_x": 0
+    },
+    "calma": {
+      "placer": 0.55,
+      "activacion": -0.65,
+      "dominancia": 0.15,
+      "sonrisa": 0.45,
+      "ojos": 0.8,
+      "apertura_boca": 0,
+      "boca_x": 0
+    },
+    "sorpresa": {
+      "placer": 0.2,
+      "activacion": 0.9,
+      "dominancia": -0.2,
+      "sonrisa": 0.1,
+      "ojos": 1.0,
+      "apertura_boca": 0.7500000000000001,
+      "boca_x": 0
+    },
+    "tristeza": {
+      "placer": -0.7,
+      "activacion": -0.45,
+      "dominancia": -0.6,
+      "sonrisa": -0.65,
+      "ojos": 0.55,
+      "apertura_boca": 0,
+      "boca_x": 0
+    },
+    "enojo": {
+      "placer": -0.7,
+      "activacion": 0.75,
+      "dominancia": 0.65,
+      "sonrisa": -0.4,
+      "ojos": 0.45,
+      "apertura_boca": 0.37500000000000006,
+      "boca_x": 0
+    },
+    "neutral": {
+      "placer": 0.0,
+      "activacion": 0.0,
+      "dominancia": 0.0,
+      "sonrisa": 0.1,
+      "ojos": 0.75,
+      "apertura_boca": 0,
+      "boca_x": 0
+    }
+  },
+  "PENSANDO": {
+    "placer": 0.1,
+    "activacion": 0.7,
+    "dominancia": 0.0,
+    "sonrisa": 0.0,
+    "ojos": 0.65,
+    "apertura_boca": 0.0,
+    "boca_x": 35.0
+  }
+}

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#111b23">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Wally</title>
+<link rel="manifest" href="/static/manifest.webmanifest">
+<link rel="icon" href="/static/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<main id="escena">
+  <svg id="cara" viewBox="120 30 360 310" role="img" aria-label="Cara de Wally">
+    <g id="respiracion">
+      <g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"><path id="ceja-izq"/><path id="ceja-der"/></g>
+      <g id="mirada"><g id="g-ojo-izq"><rect id="ojo-izq" rx="27" fill="currentColor"/></g><g id="g-ojo-der"><rect id="ojo-der" rx="27" fill="currentColor"/></g></g>
+      <g id="g-boca"><path id="boca" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></g>
+    </g>
+  </svg>
+  <button id="ajustes-btn" class="icono" aria-label="Abrir ajustes" aria-expanded="false">⚙</button>
+  <p id="estado" role="status" aria-live="polite">Listo para conversar</p>
+  <div id="controles"><button id="hablar" disabled>Mantén para hablar</button><button id="reproducir" hidden>Escuchar respuesta</button></div>
+  <p id="orientacion">Gira el celular para ver a Wally en horizontal</p>
+  <section id="bienvenida" class="capa">
+    <div class="tarjeta"><span class="marca">WALLY</span><h1>Hola, estoy aquí.</h1><p>Mantén el botón para hablar.<br>Suéltalo y te responderé.</p><button id="iniciar">Comenzar</button><small>Usaremos tu micrófono. La cámara es opcional y se procesa en tu dispositivo.</small></div>
+  </section>
+  <section id="ajustes" class="capa" hidden>
+    <div class="tarjeta ajustes"><div class="fila"><h2>Ajustes</h2><button id="cerrar-ajustes" class="secundario" aria-label="Cerrar ajustes">Cerrar</button></div>
+      <button id="camara-btn" class="secundario">Activar seguimiento</button><p id="camara-estado">Cámara apagada</p>
+      <label><input id="invertir" type="checkbox"> Invertir mirada horizontal</label>
+      <label><input id="subtitulos" type="checkbox"> Mostrar respuesta en pantalla</label>
+      <button id="pantalla" class="secundario">Ampliar pantalla</button>
+      <p class="ayuda">En iPhone puedes usar Compartir → Agregar a inicio y abrir Wally desde su icono para aprovechar la pantalla.</p>
+      <form id="form-texto"><label for="texto">También puedes escribir</label><div class="fila"><input id="texto" maxlength="2000" autocomplete="off" placeholder="Tu pregunta…"><button id="enviar" type="submit">Enviar</button></div></form>
+      <details><summary>Conversación</summary><div id="historial"></div></details>
+      <small>El audio y el texto se envían a Groq y Fish Audio. Las imágenes de cámara no se envían. Esta demo usa cuotas compartidas.</small>
+    </div>
+  </section>
+  <p id="respuesta" hidden></p>
+  <video id="video" autoplay muted playsinline aria-hidden="true"></video>
+</main>
+<script type="module" src="/static/app.js"></script>
+</body>
+</html>
